@@ -1,0 +1,551 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.1": {
+      "ControlzEx/3.0.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        }
+      },
+      "MahApps.Metro/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "ControlzEx": "(3.0.2, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/MahApps.Metro.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MahApps.Metro.dll": {}
+        }
+      },
+      "MaterialDesignColors/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        }
+      },
+      "MaterialDesignThemes/2.6.0": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "(1.1.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        }
+      },
+      "MaterialDesignThemes.MahApps/0.1.0": {
+        "type": "package",
+        "dependencies": {
+          "MahApps.Metro": "1.6.0",
+          "MaterialDesignColors": "(1.1.3, 2.0.0)",
+          "MaterialDesignThemes": "(2.5.1, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win": {
+      "ControlzEx/3.0.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        }
+      },
+      "MahApps.Metro/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "ControlzEx": "(3.0.2, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/MahApps.Metro.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MahApps.Metro.dll": {}
+        }
+      },
+      "MaterialDesignColors/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        }
+      },
+      "MaterialDesignThemes/2.6.0": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "(1.1.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        }
+      },
+      "MaterialDesignThemes.MahApps/0.1.0": {
+        "type": "package",
+        "dependencies": {
+          "MahApps.Metro": "1.6.0",
+          "MaterialDesignColors": "(1.1.3, 2.0.0)",
+          "MaterialDesignThemes": "(2.5.1, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win-x64": {
+      "ControlzEx/3.0.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        }
+      },
+      "MahApps.Metro/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "ControlzEx": "(3.0.2, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/MahApps.Metro.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MahApps.Metro.dll": {}
+        }
+      },
+      "MaterialDesignColors/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        }
+      },
+      "MaterialDesignThemes/2.6.0": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "(1.1.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        }
+      },
+      "MaterialDesignThemes.MahApps/0.1.0": {
+        "type": "package",
+        "dependencies": {
+          "MahApps.Metro": "1.6.0",
+          "MaterialDesignColors": "(1.1.3, 2.0.0)",
+          "MaterialDesignThemes": "(2.5.1, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win-x86": {
+      "ControlzEx/3.0.2.4": {
+        "type": "package",
+        "compile": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        },
+        "runtime": {
+          "lib/net462/ControlzEx.dll": {},
+          "lib/net462/System.Windows.Interactivity.dll": {}
+        }
+      },
+      "MahApps.Metro/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "ControlzEx": "(3.0.2, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/MahApps.Metro.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MahApps.Metro.dll": {}
+        }
+      },
+      "MaterialDesignColors/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignColors.dll": {}
+        }
+      },
+      "MaterialDesignThemes/2.6.0": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "(1.1.3, 2.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.Wpf.dll": {}
+        }
+      },
+      "MaterialDesignThemes.MahApps/0.1.0": {
+        "type": "package",
+        "dependencies": {
+          "MahApps.Metro": "1.6.0",
+          "MaterialDesignColors": "(1.1.3, 2.0.0)",
+          "MaterialDesignThemes": "(2.5.1, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MaterialDesignThemes.MahApps.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ControlzEx/3.0.2.4": {
+      "sha512": "vpsFD/+EpW7ppgvg9bykNUa1xsyJYL8broRwSYQQNFYQQr43YcrQlLFBrOQrAt6v4z7vyWkEe6EMY83TLMkr1w==",
+      "type": "package",
+      "path": "controlzex/3.0.2.4",
+      "files": [
+        ".signature.p7s",
+        "controlzex.3.0.2.4.nupkg.sha512",
+        "controlzex.nuspec",
+        "lib/net40/ControlzEx.dll",
+        "lib/net40/ControlzEx.pdb",
+        "lib/net40/System.Windows.Interactivity.dll",
+        "lib/net45/ControlzEx.dll",
+        "lib/net45/ControlzEx.pdb",
+        "lib/net45/System.Windows.Interactivity.dll",
+        "lib/net462/ControlzEx.dll",
+        "lib/net462/ControlzEx.pdb",
+        "lib/net462/System.Windows.Interactivity.dll"
+      ]
+    },
+    "MahApps.Metro/1.6.0": {
+      "sha512": "LuCmKwqrveGyQSz1jd+UjpkgaTF9119i1ZpOIFft0Su/Zgax1uSBiUYGFKJgQBqAXTmIxmwOCe7yGiChoCETdQ==",
+      "type": "package",
+      "path": "mahapps.metro/1.6.0",
+      "files": [
+        ".signature.p7s",
+        "lib/net40/MahApps.Metro.XML",
+        "lib/net40/MahApps.Metro.dll",
+        "lib/net40/MahApps.Metro.pdb",
+        "lib/net45/MahApps.Metro.XML",
+        "lib/net45/MahApps.Metro.dll",
+        "lib/net45/MahApps.Metro.pdb",
+        "mahapps.metro.1.6.0.nupkg.sha512",
+        "mahapps.metro.nuspec"
+      ]
+    },
+    "MaterialDesignColors/1.2.0": {
+      "sha512": "Vdhp5EsnSc00FtmPGzo1gdnsIxzSuSsAVnsCUcXYpltmEi7Ni3tTyhtcvsz6lpQyEU5pILmGzmX5YejATyVYww==",
+      "type": "package",
+      "path": "materialdesigncolors/1.2.0",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/MaterialDesignColors.dll",
+        "lib/net45/MaterialDesignColors.pdb",
+        "materialdesigncolors.1.2.0.nupkg.sha512",
+        "materialdesigncolors.nuspec"
+      ]
+    },
+    "MaterialDesignThemes/2.6.0": {
+      "sha512": "ccKu0Ex0BlA/DC5Ak4p3RK+d1eAjryoEbSrRoVwdPwajhO2K62Y3yFfeSSch3/D2pA6f0PZTj10Q+dF8UicijA==",
+      "type": "package",
+      "path": "materialdesignthemes/2.6.0",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/MaterialDesignThemes.Wpf.XML",
+        "lib/net45/MaterialDesignThemes.Wpf.dll",
+        "lib/net45/MaterialDesignThemes.Wpf.pdb",
+        "materialdesignthemes.2.6.0.nupkg.sha512",
+        "materialdesignthemes.nuspec",
+        "src/net45/Badged.cs",
+        "src/net45/BaseTheme.cs",
+        "src/net45/ButtonAssist.cs",
+        "src/net45/ButtonProgressAssist.cs",
+        "src/net45/Card.cs",
+        "src/net45/Chip.cs",
+        "src/net45/Clock.cs",
+        "src/net45/ClockChoiceMadeEventArgs.cs",
+        "src/net45/ClockItemButton.cs",
+        "src/net45/ColorPicker.cs",
+        "src/net45/ColorZone.cs",
+        "src/net45/ColorZoneAssist.cs",
+        "src/net45/ComboBoxAssist.cs",
+        "src/net45/ComboBoxPopup.cs",
+        "src/net45/Converters/BooleanConverter.cs",
+        "src/net45/Converters/BooleanToVisibilityConverter.cs",
+        "src/net45/Converters/BorderClipConverter.cs",
+        "src/net45/Converters/BrushRoundConverter.cs",
+        "src/net45/Converters/BrushToRadialGradientBrushConverter.cs",
+        "src/net45/Converters/CalendarDateCoalesceConverter.cs",
+        "src/net45/Converters/CircularProgressBar/ArcEndPointConverter.cs",
+        "src/net45/Converters/CircularProgressBar/ArcSizeConverter.cs",
+        "src/net45/Converters/CircularProgressBar/LargeArcConverter.cs",
+        "src/net45/Converters/CircularProgressBar/LocalEx.cs",
+        "src/net45/Converters/CircularProgressBar/RotateTransformCentreConverter.cs",
+        "src/net45/Converters/CircularProgressBar/StartPointConverter.cs",
+        "src/net45/Converters/ClockItemIsCheckedConverter.cs",
+        "src/net45/Converters/ClockLineConverter.cs",
+        "src/net45/Converters/DrawerOffsetConverter.cs",
+        "src/net45/Converters/EqualityToVisibilityConverter.cs",
+        "src/net45/Converters/HintProxyFabricConverter.cs",
+        "src/net45/Converters/HsbLinearGradientConverter.cs",
+        "src/net45/Converters/HsbToColorConverter.cs",
+        "src/net45/Converters/ListViewItemContainerStyleConverter.cs",
+        "src/net45/Converters/MathConverter.cs",
+        "src/net45/Converters/MathMultipleConverter.cs",
+        "src/net45/Converters/NotConverter.cs",
+        "src/net45/Converters/NotZeroConverter.cs",
+        "src/net45/Converters/NotZeroToVisibilityConverter.cs",
+        "src/net45/Converters/NullToVisibilityConverter.cs",
+        "src/net45/Converters/NullableDateTimeToCurrentDateConverter.cs",
+        "src/net45/Converters/PointValueConverter.cs",
+        "src/net45/Converters/RangeLengthConverter.cs",
+        "src/net45/Converters/RangePositionConverterConverter.cs",
+        "src/net45/Converters/ShadowConverter.cs",
+        "src/net45/Converters/ShadowEdgeConverter.cs",
+        "src/net45/Converters/ShadowInfo.cs",
+        "src/net45/Converters/SizeToRectConverter.cs",
+        "src/net45/Converters/SnackbarMessageTypeConverter.cs",
+        "src/net45/Converters/TextFieldHintVisibilityConverter.cs",
+        "src/net45/Converters/TimeToVisibilityConverter.cs",
+        "src/net45/CustomPopupPlacementCallbackHelper.cs",
+        "src/net45/DataGridAssist.cs",
+        "src/net45/DateTimeEx.cs",
+        "src/net45/DialogClosingEventArgs.cs",
+        "src/net45/DialogClosingEventHandler.cs",
+        "src/net45/DialogHost.cs",
+        "src/net45/DialogHostEx.cs",
+        "src/net45/DialogOpenedEventArgs.cs",
+        "src/net45/DialogOpenedEventHandler.cs",
+        "src/net45/DialogSession.cs",
+        "src/net45/DpiHelper.cs",
+        "src/net45/DrawerHost.cs",
+        "src/net45/ExpanderAssist.cs",
+        "src/net45/Extensions.cs",
+        "src/net45/Flipper.cs",
+        "src/net45/HintAssist.cs",
+        "src/net45/HintProxyFabric.ComboBox.cs",
+        "src/net45/HintProxyFabric.PasswordBox.cs",
+        "src/net45/HintProxyFabric.RichTextBox.cs",
+        "src/net45/HintProxyFabric.TextBox.cs",
+        "src/net45/HintProxyFabric.cs",
+        "src/net45/IBaseTheme.cs",
+        "src/net45/IHintProxy.cs",
+        "src/net45/ISnackbarMessageQueue.cs",
+        "src/net45/ITheme.cs",
+        "src/net45/IThemeManager.cs",
+        "src/net45/Icon.cs",
+        "src/net45/IconType.cs",
+        "src/net45/ListBoxAssist.cs",
+        "src/net45/ListSortDirectionIndicator.cs",
+        "src/net45/ListViewAssist.cs",
+        "src/net45/MaterialDataGridComboBoxColumn.cs",
+        "src/net45/MaterialDataGridTextColumn.cs",
+        "src/net45/MaterialDateDisplay.cs",
+        "src/net45/MaterialDesignDarkTheme.cs",
+        "src/net45/MaterialDesignLightTheme.cs",
+        "src/net45/MessageQueueExtension.cs",
+        "src/net45/PackIcon.cs",
+        "src/net45/PackIconDataFactory.cs",
+        "src/net45/PackIconExtension.cs",
+        "src/net45/PackIconKind.cs",
+        "src/net45/Palette.cs",
+        "src/net45/PaletteHelper.cs",
+        "src/net45/Plane3D.cs",
+        "src/net45/PopupBox.cs",
+        "src/net45/Properties/AssemblyInfo.cs",
+        "src/net45/Properties/Resources.Designer.cs",
+        "src/net45/Properties/Settings.Designer.cs",
+        "src/net45/RatingBar.cs",
+        "src/net45/RatingBarButton.cs",
+        "src/net45/ResourceDictionaryExtensions.cs",
+        "src/net45/Ripple.cs",
+        "src/net45/RippleAssist.cs",
+        "src/net45/ScaleHost.cs",
+        "src/net45/Screen.cs",
+        "src/net45/ScrollViewerAssist.cs",
+        "src/net45/ScrollbarAssist.cs",
+        "src/net45/ShadowAssist.cs",
+        "src/net45/SmartHint.cs",
+        "src/net45/Snackbar.cs",
+        "src/net45/SnackbarMessage.cs",
+        "src/net45/SnackbarMessageEventArgs.cs",
+        "src/net45/SnackbarMessageQueue.cs",
+        "src/net45/SnackbarMessageQueueItem.cs",
+        "src/net45/Spelling.cs",
+        "src/net45/StringExtensions.cs",
+        "src/net45/TextFieldAssist.cs",
+        "src/net45/Theme.cs",
+        "src/net45/ThemeAssist.cs",
+        "src/net45/ThemeChangedEventArgs.cs",
+        "src/net45/ThemeExtensions.cs",
+        "src/net45/ThemeMarkupExtension.cs",
+        "src/net45/TimePicker.cs",
+        "src/net45/ToggleButtonAssist.cs",
+        "src/net45/ToolTipAssist.cs",
+        "src/net45/Transitions/CircleWipe.cs",
+        "src/net45/Transitions/FadeWipe.cs",
+        "src/net45/Transitions/ITransitionEffect.cs",
+        "src/net45/Transitions/ITransitionEffectSubject.cs",
+        "src/net45/Transitions/ITransitionWipe.cs",
+        "src/net45/Transitions/IZIndexController.cs",
+        "src/net45/Transitions/IndexedItemOffsetMultiplierExtension.cs",
+        "src/net45/Transitions/SlideDirection.cs",
+        "src/net45/Transitions/SlideOutWipe.cs",
+        "src/net45/Transitions/SlideWipe.cs",
+        "src/net45/Transitions/TransitionAssist.cs",
+        "src/net45/Transitions/TransitionEffect.cs",
+        "src/net45/Transitions/TransitionEffectBase.cs",
+        "src/net45/Transitions/TransitionEffectExtension.cs",
+        "src/net45/Transitions/TransitionEffectKind.cs",
+        "src/net45/Transitions/TransitionEffectTypeConverter.cs",
+        "src/net45/Transitions/Transitioner.cs",
+        "src/net45/Transitions/TransitionerSlide.cs",
+        "src/net45/Transitions/TransitionerSlideState.cs",
+        "src/net45/Transitions/TransitioningContent.cs",
+        "src/net45/Transitions/TransitioningContentBase.cs",
+        "src/net45/TreeHelper.cs",
+        "src/net45/TreeViewAssist.cs",
+        "src/net45/Underline.cs",
+        "src/net45/ValidationAssist.cs"
+      ]
+    },
+    "MaterialDesignThemes.MahApps/0.1.0": {
+      "sha512": "pAkZlw9v0+EALEr1qYrIk4YSZe0Ji+lMM3BY36Gk299kGJ5Hsu8CuLdNDvxYtoiqUpQ/dCNZe7obL0PlgS2Rxw==",
+      "type": "package",
+      "path": "materialdesignthemes.mahapps/0.1.0",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/MaterialDesignThemes.MahApps.dll",
+        "materialdesignthemes.mahapps.0.1.0.nupkg.sha512",
+        "materialdesignthemes.mahapps.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.1": [
+      "MaterialDesignColors >= 1.2.0",
+      "MaterialDesignThemes >= 2.6.0",
+      "MaterialDesignThemes.MahApps >= 0.1.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\kk\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\WPF\\Edir\\Test\\Test.csproj",
+      "projectName": "Test",
+      "projectPath": "D:\\WPF\\Edir\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\kk\\.nuget\\packages\\",
+      "outputPath": "D:\\WPF\\Edir\\Test\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\kk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net471"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net471": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net471": {
+        "dependencies": {
+          "MaterialDesignColors": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "MaterialDesignThemes": {
+            "target": "Package",
+            "version": "[2.6.0, )"
+          },
+          "MaterialDesignThemes.MahApps": {
+            "target": "Package",
+            "version": "[0.1.0, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "MahApps.Metro 1.6.0 does not provide an inclusive lower bound for dependency ControlzEx (> 3.0.2 && < 4.0.0). An approximate best match of ControlzEx 3.0.2.4 was resolved.",
+      "libraryId": "ControlzEx",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.1",
+        ".NETFramework,Version=v4.7.1/win",
+        ".NETFramework,Version=v4.7.1/win-x64",
+        ".NETFramework,Version=v4.7.1/win-x86"
+      ]
+    }
+  ]
+}

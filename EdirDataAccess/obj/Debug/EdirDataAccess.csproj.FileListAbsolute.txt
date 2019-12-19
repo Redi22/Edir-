@@ -1,0 +1,12 @@
+D:\WPF\Edir\EdirDataAccess\obj\Debug\EdirDataAccess.csprojAssemblyReference.cache
+D:\WPF\Edir\EdirDataAccess\obj\Debug\EdirDataAccess.csproj.CoreCompileInputs.cache
+D:\WPF\Edir\EdirDataAccess\bin\Debug\EdirDataAccess.dll.config
+D:\WPF\Edir\EdirDataAccess\bin\Debug\EdirDataAccess.dll
+D:\WPF\Edir\EdirDataAccess\bin\Debug\EdirDataAccess.pdb
+D:\WPF\Edir\EdirDataAccess\bin\Debug\EntityFramework.dll
+D:\WPF\Edir\EdirDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\WPF\Edir\EdirDataAccess\bin\Debug\EntityFramework.xml
+D:\WPF\Edir\EdirDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\WPF\Edir\EdirDataAccess\obj\Debug\EdirDataAccess.csproj.CopyComplete
+D:\WPF\Edir\EdirDataAccess\obj\Debug\EdirDataAccess.dll
+D:\WPF\Edir\EdirDataAccess\obj\Debug\EdirDataAccess.pdb

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Edir.forms.SignUpForms.NextPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Edir.forms.SignUpForms"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"  Foreground="White"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Width="200">
+        <TextBlock Text="Payment Informations" Foreground="DarkOrange" Margin="0 10"/>
+        <TextBox Name="PayMember"
+  materialDesign:HintAssist.Hint="Pay for Member Desecied"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0 20"/>
+
+        <TextBox Name="PayChild"
+  materialDesign:HintAssist.Hint="Pay for Child Desecied"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox Name="PaySibling"
+  materialDesign:HintAssist.Hint="Pay for Sibling Desecied"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox Name="PayParent"
+  materialDesign:HintAssist.Hint="Pay for Parent Desecied"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox Name="DefEventFin"
+  materialDesign:HintAssist.Hint="Default Event Fin"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        
+    </StackPanel>
+</UserControl>

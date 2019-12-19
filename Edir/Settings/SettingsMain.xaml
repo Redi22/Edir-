@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Edir.Settings.SettingsMain"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Edir.Settings"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Foreground="White"
+             d:DesignHeight="450" d:DesignWidth="600">
+    <Grid  Background="#222222" >
+        <StackPanel  Orientation="Horizontal" VerticalAlignment="Top" Margin=" 50 0 0 0 " >
+           
+            <ListView VerticalAlignment="Top" >
+                <ListViewItem  PreviewMouseLeftButtonDown="ListView_PreviewMouseDown">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Person" VerticalAlignment="Center"/>
+                        <Label Content="Custom Roles" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+
+                </ListViewItem>
+            </ListView>
+            <ListView VerticalAlignment="Top" >
+                <ListViewItem PreviewMouseLeftButtonDown="ListView_PreviewMouseDown_1">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="People" VerticalAlignment="Center"/>
+                        <Label Content="Member Role" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+
+                </ListViewItem>
+                
+            </ListView>
+        </StackPanel>
+        <Grid Background="#444444" x:Name="SettingGrid"  Margin="0,40,0,0">
+            <GroupBox Width="400" FontSize="12"
+  Header="Account Settings "
+  Style="{DynamicResource MaterialDesignGroupBox}"
+  Margin="16"
+  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+  BorderThickness="0">
+                <StackPanel HorizontalAlignment="Left" Width="200" Margin="80 0">
+
+                    <PasswordBox  FontSize="12"
+  x:Name="PasswordBox" Margin="0 30 0 0"
+  materialDesign:HintAssist.Hint="Password" />
+
+                    <TextBox Name="Username" FontSize="12"  Margin="0 10"
+  materialDesign:HintAssist.Hint="Username"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <PasswordBox  FontSize="12"
+  x:Name="NewPass"
+  materialDesign:HintAssist.Hint="Password" />
+                    <PasswordBox  FontSize="12"
+  x:Name="Confirm"
+  materialDesign:HintAssist.Hint="Confirm" />
+                    <Button Margin="20,15,10,15" Click="Button_Click"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Apply Changes"/>
+                </StackPanel>
+
+            </GroupBox>
+        </Grid>
+            
+    </Grid>
+</UserControl>

@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Edir.forms.SpouseAndParentsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Edir.forms"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Foreground="White"
+             d:DesignHeight="450" d:DesignWidth="400">
+    <StackPanel>
+        <GroupBox
+  Header="Spouse information"
+  Style="{DynamicResource MaterialDesignGroupBox}"
+  Margin="16" FontSize="12"
+  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+  BorderThickness="0">
+
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Spouse Name"    Margin="10"/>
+                    <TextBlock Name="SpouseName"     Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                     <TextBlock Text="Spouse Mother Name"    Margin="10"/>
+                    <TextBlock Name="SpouseMName"  Margin="10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Spouse Father Name"    Margin="10"/>
+                    <TextBlock Name="SpouseFName" Margin="10"/>
+
+                </StackPanel>
+              
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

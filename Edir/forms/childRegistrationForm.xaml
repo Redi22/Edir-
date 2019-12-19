@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Edir.forms.childRegistrationForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Edir.forms"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Foreground="White"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+
+   
+        <StackPanel>
+
+        
+        <DataGrid Grid.Column="1"  Name="ChildGrid" AutoGenerateColumns="False"  SelectionChanged="ChildGrid_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="IDColumn" Header="ID" Width="70" Binding="{Binding Id}"/>
+                <DataGridTextColumn x:Name="NameColumn" Header="First Name" Width="120" Binding="{Binding Name}"/>
+                <DataGridTextColumn x:Name="PhoneColumn" Header="First Name" Width="120" Binding="{Binding Phone}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Column="0">
+            
+        <Label Foreground="Orange" Margin="10" Content="Children Registration Form"  FontSize="17" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+        <StackPanel  Margin="20" HorizontalAlignment="Center" Orientation="Horizontal" >
+                
+
+                <TextBox x:Name="ChildName" Margin="10 0"  Width="200 " FontSize="11" materialDesign:HintAssist.Hint=" Name" />
+                <TextBox x:Name="Phone"   Width="200 " FontSize="11" materialDesign:HintAssist.Hint=" Phone" />
+        </StackPanel>
+        
+
+
+        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+                <Button   Name="AddBtn" Click="AddBtn_Click"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="60" Margin="5 0"
+    ToolTip="Resource name: MaterialDesignRaisedAccentButton">
+                    <materialDesign:PackIcon Kind="Add"/>
+                    
+        </Button>
+                <Button
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="60" Margin="25 0" Name="EditBtn" Click="EditBtn_Click"
+    ToolTip="Resource name: MaterialDesignRaisedAccentButton">
+                        <materialDesign:PackIcon Kind="Edit"/>
+                    </Button>
+                <Button Name="DeleteBtn" Click="DeleteBtn_Click" 
+    Style="{StaticResource MaterialDesignRaisedButton}"
+    Width="60"
+    ToolTip="Resource name: MaterialDesignRaisedAccentButton">
+                        <materialDesign:PackIcon Kind="Delete"/>
+                    </Button>
+            </StackPanel>
+
+        </StackPanel>
+        </StackPanel>
+    
+        
+   
+</UserControl>

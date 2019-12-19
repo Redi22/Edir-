@@ -1,0 +1,228 @@
+﻿<Window x:Class="Edir.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Edir"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" FontSize="28" Icon="assets/logoDark.png"
+        Foreground="Orange"  WindowStartupLocation="CenterScreen"
+		Title="MainWindow" Height="700" Width="1024" ResizeMode="NoResize">
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="grid1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="250"/>
+            </DoubleAnimationUsingKeyFrames>
+            <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="grid1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="50"/>
+            </DoubleAnimationUsingKeyFrames>-->
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="stackPanel1">
+                <EasingDoubleKeyFrame x:Name="easingDoubleKeyFrame" KeyTime="0:0:0.6" Value="252"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="stackPanel1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="9"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="listViewItem">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-250,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.6" Value="0"/>
+                <EasingThicknessKeyFrame x:Name="easingThicknessKeyFrame" KeyTime="0:0:1" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="listViewItem1">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-250,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:0.8" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="listViewItem2">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-250,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1.0" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="listViewItem3">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-250,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1.2" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="listViewItem4">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-250,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1.4" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="listViewItem5">
+                <EasingThicknessKeyFrame KeyTime="0" Value="-250,0,0,0"/>
+                <EasingThicknessKeyFrame KeyTime="0:0:1.6" Value="0"/>
+            </ThicknessAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboard2">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="grid1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="grid1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>-->
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="stackPanel1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger SourceName="menuDrawerOpen" RoutedEvent="Button.Click">
+
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+
+        </EventTrigger>
+        <EventTrigger SourceName="menuDrawerClose" RoutedEvent="Button.Click">
+
+            <BeginStoryboard Storyboard="{StaticResource Storyboard2}"/>
+
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="MainGridView" Background="#181818" Width="1024">
+
+        <StackPanel x:Name="stackPanel1" Width="250" Margin="-250 0 0 0" HorizontalAlignment="Left" Grid.Column="0" Grid.RowSpan="4" Background="#181818" RenderTransformOrigin="0.5,0.5"  >
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <StackPanel x:Name="stackPanel" Orientation="Horizontal" >
+                <Button x:Name="SettingsButton" Foreground="Orange"  Click="SettingsButton_Click" Margin="15 0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" HorizontalAlignment="Left"  Padding="0" Background="{x:Null}" VerticalAlignment="Top" Height="49"  Width="50" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="Settings" Width="25" Height="25"/>
+                </Button>
+
+                <Button x:Name="notificationButton" Foreground="Orange" Click="notificationButton_Click" Margin="3 0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" HorizontalAlignment="Left"  Padding="0" Background="{x:Null}" VerticalAlignment="Top"  Height="49"  Width="50" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="Bell" Width="25" Height="25"/>
+                </Button>
+                <Button x:Name="ReportButton" Foreground="Orange" Click="ReportButton_Click" Margin="3 0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" HorizontalAlignment="Left"  Padding="0" Background="{x:Null}" VerticalAlignment="Top"  Height="49"  Width="50" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="Report" Width="25" Height="25"/>
+                </Button>
+            </StackPanel>
+            <ListView Margin="0 80" Foreground="Orange" Height="550" >
+                <ListViewItem  PreviewMouseLeftButtonDown="Home_clicked" x:Name="listViewItem"   >
+
+                    <StackPanel Orientation="Horizontal" Width="200" Height="60">
+
+                        <materialDesign:PackIcon Kind="Home" Width="50" Margin="20 10 0 0" Height="40"/>
+                        <TextBlock FontSize="16" VerticalAlignment="Center" Margin="20" ><Run Text="Home"/></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+
+                <ListViewItem PreviewMouseLeftButtonDown="Members_clicked" x:Name="listViewItem1" >
+                    <StackPanel Orientation="Horizontal" Width="200">
+                        <materialDesign:PackIcon Kind="People" Width="50" Margin="20 10 0 0" Height="35"/>
+                        <TextBlock FontSize="18" VerticalAlignment="Center" Margin="20"><Run Text="Members"/></TextBlock>
+
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem PreviewMouseLeftButtonDown="Event_clicked" x:Name="listViewItem2">
+                    <StackPanel Orientation="Horizontal" Width="200">
+                        <materialDesign:PackIcon Kind="Event" Width="50" Margin="20 10 0 0" Height="35"/>
+                        <TextBlock FontSize="16" VerticalAlignment="Center" Margin="20"><Run Text="Events"/></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem PreviewMouseLeftButtonDown="Items_click"  x:Name="listViewItem3">
+                    <StackPanel Orientation="Horizontal" Width="200">
+                        <materialDesign:PackIcon Kind="Store" Width="50" Margin="20 10 0 0" Height="35"/>
+                        <TextBlock FontSize="16"  VerticalAlignment="Center" Margin="20"><Run Text="Store"/></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem PreviewMouseLeftButtonDown="Rules_clicked" x:Name="listViewItem4">
+                    <StackPanel Orientation="Horizontal" Width="200">
+                        <materialDesign:PackIcon Kind="FileDocument" Width="50" Margin="20 10 0 0" Height="35"/>
+                        <TextBlock FontSize="16" VerticalAlignment="Center" Margin="20"><Run Text="Rules"/></TextBlock>
+
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem  x:Name="listViewItem5" PreviewMouseLeftButtonDown="Payment_PreviewMouseLeftButtonDown" >
+
+                    <StackPanel Orientation="Horizontal" Width="200" >
+
+                        <materialDesign:PackIcon Kind="Payment" Width="50" Margin="20 10 0 0" Height="35"/>
+                        <TextBlock FontSize="16" VerticalAlignment="Center" Margin="20" ><Run Text="Payment"/></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+
+
+            </ListView>
+
+        </StackPanel>
+        
+
+        <Grid x:Name="grid" Width="1024" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="grid1" Grid.Column="0" Background="#272727" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Foreground="Orange" Click="menuDrawerClose_Click" Grid.Row="0" x:Name="menuDrawerClose" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"    Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.363,0.444">
+                    <materialDesign:PackIcon Kind="Menu" Width="45" Height="40"/>
+                </Button>
+                <Button Foreground="Orange" Click="menuDrawerOpen_Click" Grid.Row="0" x:Name="menuDrawerOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"   Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.363,0.444">
+                    <materialDesign:PackIcon Kind="Menu" Width="45" Height="40"/>
+                </Button>
+               
+                <Grid x:Name="named" Margin="30 0 0 0 " Grid.Column="0" Grid.ColumnSpan="4"  Grid.Row="1"  Grid.RowSpan="3">
+    
+                </Grid>
+
+                <!--<Grid x:Name="ProfileView"  >
+
+                   
+                </Grid>-->
+
+
+            <Grid Height="250" Margin="20" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="5" Grid.Row="1" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid x:Name="dashbord1" Grid.Column="0"  Margin="20" >
+
+                </Grid>
+                <Grid x:Name="dashbord2" Grid.Column="1"  Margin="20" >
+
+                </Grid>
+                <Grid x:Name="dashbord3" Grid.Column="2"  Margin="20" >
+
+                </Grid>
+            </Grid>
+                <Grid Height="250" Margin="20" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="5" Grid.Row="2" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Name="Upcoming"  Width="500" Margin="40 0" >
+
+                </Grid>
+                
+               
+            </Grid>
+            </Grid>
+
+        </Grid>
+        
+    </Grid>
+</Window>

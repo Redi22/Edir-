@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Edir.forms.MemberRoleRegistrtionForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Edir.forms"
+             mc:Ignorable="d" Foreground="White"
+             d:DesignHeight="300" d:DesignWidth="600">
+    <ScrollViewer>
+        <StackPanel>
+        <Grid Margin="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" Width="200">
+                <Label Foreground="DarkOrange" Content="Role Registration" FontSize="17" HorizontalContentAlignment="Left" Margin="30 0" VerticalContentAlignment="Center" />
+
+
+                <ComboBox FontSize="12"
+  materialDesign:HintAssist.Hint="Role Id" Name="RoleId" ItemsSource="{Binding Id}" Loaded="RoleId_Loaded" DisplayMemberPath="Name" SelectedValuePath="Id"
+  Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+                <TextBox Name="Username" FontSize="12"  Margin="0 10"
+  materialDesign:HintAssist.Hint="Username"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox  FontSize="12"
+  x:Name="PasswordBox"
+  materialDesign:HintAssist.Hint="Password" />
+                <Button Margin="50,15,30,15" Click="Button_Click"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton">
+                    _Make Admin
+                </Button>
+
+            </StackPanel>
+            <StackPanel Grid.Column="0" >
+                <Label Content="Roles" Foreground="DarkOrange"/>
+                <TextBlock FontSize="12">
+                There are three roles.
+                </TextBlock>
+                <TextBlock FontSize="12" TextWrapping="Wrap" Margin="5">
+                       1, Super Admin: this admin has all privilages and also must add new admins.
+                </TextBlock>
+                <TextBlock FontSize="12" TextWrapping="Wrap" Margin="5">
+                       2, Admin: this admin has all privilages except store privilages. There can be multiple admins but all will have equal privilages.
+
+                </TextBlock>
+                <TextBlock FontSize="12" TextWrapping="Wrap" Margin="5">
+                       3, Store Admin: this admin has privilages involving the store management. There can be multiple store admins but all will have equal privilages.
+
+                </TextBlock>
+
+            </StackPanel>
+        </Grid>
+        <DataGrid Name="roles">
+
+        </DataGrid>
+        </StackPanel>
+    </ScrollViewer>
+
+</UserControl>

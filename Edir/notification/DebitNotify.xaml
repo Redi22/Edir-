@@ -1,0 +1,20 @@
+﻿<Window x:Class="Edir.notification.DebitNotify"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Edir.notification"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="DebitNotify" Height="400" Width="500">
+    <StackPanel>
+        <DataGrid Margin="20" Name="DebitNot" Loaded="DebitNot_Loaded" AutoGenerateColumns="False" ItemsSource="{Binding}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="IDColumn" Header="ID" Width="70" Binding="{Binding Id}"/>
+                <DataGridTextColumn x:Name="FirstNameColumn" Header="First Name" Width="120" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn x:Name="LastNameColumn" Header="Last Name" Width="120" Binding="{Binding LastName}"/>
+                <DataGridTextColumn x:Name="MiddleNameColumn" Header="Debit" Width="120" Binding="{Binding Debit}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>
