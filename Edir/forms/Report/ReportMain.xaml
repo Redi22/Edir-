@@ -5,11 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Edir.forms.Report"
-             mc:Ignorable="d"  Foreground="Black" Background="White"
-             d:DesignHeight="450" d:DesignWidth="200">
-    <Grid>
+             mc:Ignorable="d"  Foreground="White" FontSize="14"
+             d:DesignHeight="450" d:DesignWidth="500">
+    <ScrollViewer>
+        
+    <StackPanel>
         <GroupBox
-  Header="Report of the last 30 days"
+  Header="Report of the month " Name="head"
   Style="{DynamicResource MaterialDesignGroupBox}"
   Margin="16"
   materialDesign:ShadowAssist.ShadowDepth="Depth3"
@@ -20,5 +22,63 @@
   Short loin picanha boudin pork belly. Ground round porchetta biltong, cow t-bone tri-tip strip steak chuck filet mignon jowl turducken. Landjaeger strip steak pork chop, jowl sirloin pork capicola andouille. Kevin ribeye tongue, drumstick hamburger frankfurter t-bone corned beef beef biltong cow venison. Biltong picanha bresaola pork belly, filet mignon spare ribs doner pork chop kielbasa. Swine flank drumstick pork belly pancetta spare ribs rump filet mignon.
             </TextBlock>
         </GroupBox>
-    </Grid>
+        <GroupBox
+  Header="Events" Name="eventGrid"
+  Style="{DynamicResource MaterialDesignGroupBox}"
+  Margin="16"
+  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+  BorderThickness="0">
+                <ScrollViewer>
+                    
+                <StackPanel Name="grid_event">
+            <TextBlock Name="Desc_event"
+                    
+    Margin="6,6,6,6"
+    TextWrapping="Wrap">
+                There were no events held in this month.
+            </TextBlock>
+                </StackPanel>
+                </ScrollViewer>
+        </GroupBox>
+
+
+            <GroupBox
+  Header="Store" Name="itemGrid"
+  Style="{DynamicResource MaterialDesignGroupBox}"
+  Margin="16"
+  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+  BorderThickness="0">
+                <ScrollViewer>
+
+                    <StackPanel Name="grid_item">
+                        <TextBlock Name="Desc_item"
+                    
+    Margin="6,6,6,6"
+    TextWrapping="Wrap">
+                There were no store activities held in this month.
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+            <GroupBox
+  Header="Store" Name="memGrid"
+  Style="{DynamicResource MaterialDesignGroupBox}"
+  Margin="16"
+  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+  BorderThickness="0">
+                <ScrollViewer>
+
+                    <StackPanel Name="grid_mem">
+                        <TextBlock Name="Desc_mem"
+                    
+    Margin="6,6,6,6"
+    TextWrapping="Wrap">
+                There were no member activities this month in this month.
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
