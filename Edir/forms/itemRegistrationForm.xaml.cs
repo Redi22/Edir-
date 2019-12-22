@@ -28,6 +28,9 @@ namespace Edir.forms
         List<Rental> rents;
         List<Rental> rentals;
         List<Item> allitems;
+        double slightDmgRepair = 40;
+        double DmgRepair = 40;
+        double Repair = 40;
         public itemRegistrationForm()
         {
             InitializeComponent();
@@ -204,18 +207,29 @@ namespace Edir.forms
 
                     OneItem.RentedQuantity = Quantity;
                     OneRent.ReturnDate = DateTime.Now.Date;
+                    _context.Entry(OneRent).State = System.Data.Entity.EntityState.Modified;
+                    _context.SaveChanges();
                     OneRent.Returned = true;
                     TimeSpan timespan = OneRent.ReturnDate - OneRent.RentedDate;
                     double daysRented = timespan.TotalDays;
                     double RentMoney = 0;
-                    if (daysRented != 0)
+                    if (daysRented == 0)
                     {
-                        RentMoney = daysRented * OneItem.DailyPayment;
+                        if (!Damaged.IsChecked.GetValueOrDefault())
+                        {
+                            RentMoney = (daysRented) * OneItem.DailyPayment;
+
+                        }
+                        else
+                        {
+                            
+                        }
+                        
 
                     }
-                    else if(timespan.Hours > 2)
+                    else
                     {
-                        RentMoney = OneItem.DailyPayment;
+                        RentMoney = 0;
                     }
                     _context.Entry(OneRent).State = System.Data.Entity.EntityState.Modified;
                     _context.SaveChanges();
@@ -297,5 +311,10 @@ namespace Edir.forms
             }
         }
 
+        private void DataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            grid.ItemsSource = _context.DamagedGoods.ToList();
+        }
     }
 }

@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Edir.forms.Report"
              mc:Ignorable="d"  Foreground="White" FontSize="14"
              d:DesignHeight="450" d:DesignWidth="500">
-    <ScrollViewer>
+    <ScrollViewer >
         
     <StackPanel>
         <GroupBox
@@ -70,10 +70,43 @@
 
                     <StackPanel Name="grid_mem">
                         <TextBlock Name="Desc_mem"
-                    
     Margin="6,6,6,6"
     TextWrapping="Wrap">
                 There were no member activities this month in this month.
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+ <GroupBox
+  Header="Store" Name="payGrid"
+  Style="{DynamicResource MaterialDesignGroupBox}"
+  Margin="16"
+  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+  BorderThickness="0">
+                <ScrollViewer>
+
+                    <StackPanel Name="grid_pay">
+                        <TextBlock Name="Desc_pay"
+    Margin="6,6,6,6"
+    TextWrapping="Wrap">
+                 This month's payment has not been made yet.
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </GroupBox>
+        <GroupBox
+  Header="Store" Name="RulesGrid"
+  Style="{DynamicResource MaterialDesignGroupBox}"
+  Margin="16"
+  materialDesign:ShadowAssist.ShadowDepth="Depth3"
+  BorderThickness="0">
+                <ScrollViewer>
+
+                    <StackPanel Name="grid_rule">
+                        <TextBlock Name="Desc_rule"
+    Margin="6,6,6,6"
+    TextWrapping="Wrap">
+                 There is no activity regarding rules just yet.
                         </TextBlock>
                     </StackPanel>
                 </ScrollViewer>

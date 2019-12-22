@@ -13,8 +13,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
-        <ScrollViewer Width="250"  Background="#181818" Grid.Column="1" Margin="8,0,-8,0">
-            <StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        <ScrollViewer Width="250"  Grid.RowSpan ="2" Background="#181818" Grid.Column="1" Margin="8,0,-8,0">
+            <StackPanel>                               
                 <Grid  Height="650">
 
                     <Grid.RowDefinitions>
@@ -182,10 +187,13 @@
             </DataGrid>
         </StackPanel>
 
-        
-                <Grid Name="ChildView">
+        <Expander Grid.Row="2" Height="60"
+      HorizontalAlignment="Stretch"
+      Header="Damaged goods">
+            <StackPanel>
+                <DataGrid IsReadOnly="True" Loaded="DataGrid_Loaded" ></DataGrid>
+            </StackPanel>
+        </Expander>
 
-                </Grid>
-           
     </Grid>
 </UserControl>
