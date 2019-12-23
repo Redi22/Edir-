@@ -124,3 +124,4 @@ D:\WPF\Edir\Edir\obj\Debug\notification\MainNotificationPage.g.cs
 D:\WPF\Edir\Edir\obj\Debug\notification\MainNotificationPage.baml
 D:\WPF\Edir\Edir\obj\Debug\forms\Report\DescriptionCard.g.cs
 D:\WPF\Edir\Edir\obj\Debug\forms\Report\DescriptionCard.baml
+D:\WPF\Edir\Edir\obj\Debug\Edir.Migrations.single_price_for_purchased_item.resources

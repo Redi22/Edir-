@@ -126,9 +126,12 @@
     Height="24" Foreground="Black"
     Width="24" />
         </Button>
+            <ScrollViewer>
             <Grid Name="AttendanceForm">
                 
             </Grid>
+                
+            </ScrollViewer>
         </StackPanel>
 
     </Grid>

@@ -16,6 +16,7 @@ namespace Edir.Model
         public double DamageFee { get; set; }
         public double ReplacementFee { get; set; }
         public int Quantity { get; set; }
+        public double SinglePrice { get; set; }
         public int RentedQuantity { get; set; }
 
 

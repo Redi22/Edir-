@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201911171013563_PayDay.Designer.cs">
       <DependentUpon>201911171013563_PayDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912231242357_single_price_for_purchased_item.cs" />
+    <Compile Include="Migrations\201912231242357_single_price_for_purchased_item.Designer.cs">
+      <DependentUpon>201912231242357_single_price_for_purchased_item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\About.cs" />
     <Compile Include="Model\DamagedGood.cs" />
@@ -467,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911171013563_PayDay.resx">
       <DependentUpon>201911171013563_PayDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912231242357_single_price_for_purchased_item.resx">
+      <DependentUpon>201912231242357_single_price_for_purchased_item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

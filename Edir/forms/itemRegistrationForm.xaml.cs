@@ -24,21 +24,25 @@ namespace Edir.forms
     public partial class itemRegistrationForm : UserControl
     {
         private EdirDbContext _context = null;
-        Item item = new Item();
+        Item item;
+        About edir;
         List<Rental> rents;
+        double totPrice, quan;
         List<Rental> rentals;
         List<Item> allitems;
-        double slightDmgRepair = 40;
-        double DmgRepair = 40;
-        double Repair = 40;
+      
+        private double damageFee;
+
         public itemRegistrationForm()
         {
             InitializeComponent();
 
             _context = new EdirDbContext();
+            edir = _context.Abouts.FirstOrDefault();
             allitems = _context.Items.ToList();
             ItemGrid.ItemsSource = allitems;
             AvailableItems_Loaded();
+            item = new Item();
             RentedItems_Loaded();
         }
 
@@ -91,19 +95,32 @@ namespace Edir.forms
 
         private void AddItem_Click(object sender, RoutedEventArgs e)
         {
-
-            item.Name = ItName.Text.Trim();
-            item.PurchasedDate = Convert.ToDateTime(PurchasedDate.Text.ToString());
-            item.DamageFee = Convert.ToDouble(DamageFee.Text);
-
-            item.Quantity = Convert.ToInt32(Quantity.Text);
-            item.DailyPayment = Convert.ToDouble(DayPayment.Text);
-
-            _context.Items.Add(item);
-            _context.SaveChanges();
-            SucessMessage sm = new SucessMessage();
-            sm.MessageText.Text = "Registered Successfully";
-            sm.Show();
+            totPrice = Convert.ToInt64(SinglePrice.Text.ToString());
+            quan = Convert.ToInt32(Quantity.Text);
+            totPrice = quan * totPrice;
+            if(edir.Capital >= totPrice)
+            {
+                item.Name = ItName.Text.Trim();
+                item.PurchasedDate = Convert.ToDateTime(PurchasedDate.Text.ToString());
+                item.DamageFee = Convert.ToDouble(DamageFee.Text);
+                item.Quantity = Convert.ToInt32(quan);
+                item.DailyPayment = Convert.ToDouble(DayPayment.Text);
+                edir.Capital -= totPrice;
+                _context.Items.Add(item);
+                _context.SaveChanges();
+                _context.Entry(edir).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+                SucessMessage sm = new SucessMessage();
+                sm.MessageText.Text = "Registered Successfully";
+                sm.Show();
+            }
+            else
+            {
+                ErrorMessage er = new ErrorMessage();
+                er.MessageText.Text = "No Balance For This Amount";
+                er.Show();
+            }
+            
 
 
 
@@ -215,15 +232,48 @@ namespace Edir.forms
                     double RentMoney = 0;
                     if (daysRented == 0)
                     {
-                        if (!Damaged.IsChecked.GetValueOrDefault())
+                        RentMoney = (daysRented) * OneItem.DailyPayment;
+                        if (Damaged.IsChecked.GetValueOrDefault())
                         {
-                            RentMoney = (daysRented) * OneItem.DailyPayment;
+                            damageFee = 0;
+                            if(DamageType.SelectedIndex == 1)
+                            {
+                                damageFee = OneItem.SmallDamageFee;
+                                DamagedGood damagedGood = new DamagedGood();
+                                damagedGood.ItemId = OneItem.Id;
+                                damagedGood.RepairType = "Slight damage";
+                                damagedGood.Quantity = RequestedQuantity;
+                                damagedGood.Description = Description.Text.ToString();
+                                _context.DamagedGoods.Add(damagedGood);
+                                _context.SaveChanges();
 
+                            }
+                            else if(DamageType.SelectedIndex == 2)
+                            {
+                                damageFee = OneItem.DamageFee;
+                                DamagedGood damagedGood = new DamagedGood();
+                                damagedGood.ItemId = OneItem.Id;
+                                damagedGood.RepairType = "Moderate damage";
+                                damagedGood.Quantity = RequestedQuantity;
+                                damagedGood.Description = Description.Text.ToString();
+                                _context.DamagedGoods.Add(damagedGood);
+                                _context.SaveChanges();
+
+                            }
+                            else if(DamageType.SelectedIndex == 3)
+                            {
+                                DamagedGood damagedGood = new DamagedGood();
+                                damagedGood.ItemId = OneItem.Id;
+                                damagedGood.RepairType = "strong damage";
+                                damagedGood.Quantity = RequestedQuantity;
+                                damagedGood.Description = Description.Text.ToString();
+                                _context.DamagedGoods.Add(damagedGood);
+                                _context.SaveChanges();
+
+                            }
+                            RentMoney += damageFee;
                         }
-                        else
-                        {
-                            
-                        }
+                       
                         
 
                     }
@@ -290,11 +340,14 @@ namespace Edir.forms
         private void Damaged_Checked(object sender, RoutedEventArgs e)
         {
             DamageType.IsEnabled = true;
+            Description.IsEnabled = true;
+
         }
 
         private void Damaged_Unchecked(object sender, RoutedEventArgs e)
         {
             DamageType.IsEnabled = false;
+            Description.IsEnabled = false;
 
         }
 
