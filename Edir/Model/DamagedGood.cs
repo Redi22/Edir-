@@ -12,6 +12,7 @@ namespace Edir.Model
         public long ItemId { get; set; }
         public int Quantity { get; set; }
         public string RepairType { get; set; }
+        public bool IsRepaired { get; set; }
         public string Description { get; set; }
     }
 }

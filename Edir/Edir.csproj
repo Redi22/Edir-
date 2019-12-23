@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201912231242357_single_price_for_purchased_item.Designer.cs">
       <DependentUpon>201912231242357_single_price_for_purchased_item.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912231357414_repair_info.cs" />
+    <Compile Include="Migrations\201912231357414_repair_info.Designer.cs">
+      <DependentUpon>201912231357414_repair_info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\About.cs" />
     <Compile Include="Model\DamagedGood.cs" />
@@ -474,6 +478,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912231242357_single_price_for_purchased_item.resx">
       <DependentUpon>201912231242357_single_price_for_purchased_item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912231357414_repair_info.resx">
+      <DependentUpon>201912231357414_repair_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -71,8 +71,8 @@ namespace Edir.forms
             {
                 var item = MemberDataGrid.Items[i];
                 var payStatusCheckbox = MemberDataGrid.Columns[checkBoxColum].GetCellContent(item) as CheckBox;
-                var stg = MemberDataGrid.Columns[0].GetCellContent(item) as TextBlock;
-                long Id = 4;
+                TextBlock Id_block = MemberDataGrid.Columns[0].GetCellContent(item) as TextBlock;
+                long Id = Convert.ToInt64(Id_block.Text);
                 if ((bool)payStatusCheckbox.IsChecked)
                 {
                     Member member = _context.Members.FirstOrDefault(m => m.Id == Id);

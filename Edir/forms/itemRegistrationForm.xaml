@@ -14,7 +14,7 @@
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
             
         </Grid.RowDefinitions>
@@ -199,12 +199,24 @@
             </DataGrid>
         </StackPanel>
 
-        <Expander Grid.Row="2" Height="60"
+        <Expander Grid.Row="2"
       HorizontalAlignment="Stretch"
       Header="Damaged goods">
-            <StackPanel>
-                <DataGrid IsReadOnly="True" Loaded="DataGrid_Loaded" ></DataGrid>
+            <ScrollViewer>
+                
+            <StackPanel Orientation="Vertical"
+        TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
+                <DataGrid IsReadOnly="True" Name="damagedGrid" Loaded="DataGrid_Loaded" ></DataGrid>
+                <Button Click="Button_Click" 
+  Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}"
+  ToolTip="Repaired">
+                    <materialDesign:PackIcon
+    Kind="Check"
+    Height="24"
+    Width="24" />
+                </Button>
             </StackPanel>
+            </ScrollViewer>
         </Expander>
 
     </Grid>

@@ -36,18 +36,27 @@ namespace Edir.forms.SignUpForms
 
         public void Initialize(string EdirName, string Description , double PayMem ,double PaySib, double PayChild, double PayParent, double EventFin   )
         {
-            Edir.EdirName = EdirName;
-            Edir.Description = Description;
-            Edir.PayMemberDeseced = PayMem;
-            Edir.PaySiblingDeseced = PaySib;
-            Edir.PayChildDeseced = PayChild;
-            Edir.PayParentDeseced = PayParent;
-            Edir.DefaultEventFin = EventFin;
-            Edir.DefaultFirstFin = Convert.ToInt64(FirstFin.Text.ToString());
-            Edir.DefaultSecondFin = Convert.ToInt64(SecondFin.Text.ToString());
-            Edir.DefaultFinalFin = Convert.ToInt64(FinalFin.Text.ToString());
-            Edir.Capital = 0;
-            Edir.CreatedDate = DateTime.Now.Date;
+            try
+            {
+                Edir.EdirName = EdirName;
+                Edir.Description = Description;
+                Edir.PayMemberDeseced = PayMem;
+                Edir.PaySiblingDeseced = PaySib;
+                Edir.PayChildDeseced = PayChild;
+                Edir.PayParentDeseced = PayParent;
+                Edir.DefaultEventFin = EventFin;
+                Edir.DefaultFirstFin = Convert.ToInt64(FirstFin.Text.ToString());
+                Edir.DefaultSecondFin = Convert.ToInt64(SecondFin.Text.ToString());
+                Edir.DefaultFinalFin = Convert.ToInt64(FinalFin.Text.ToString());
+                Edir.Capital = 0;
+                Edir.CreatedDate = DateTime.Now.Date;
+            }
+            catch (Exception msg)
+            {
+                Console.WriteLine(msg.Message);
+                
+            }
+          
         }
         private void FinishBtn_Click(object sender, RoutedEventArgs e)
         {

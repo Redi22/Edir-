@@ -236,7 +236,8 @@ namespace Edir.forms
                         if (Damaged.IsChecked.GetValueOrDefault())
                         {
                             damageFee = 0;
-                            if(DamageType.SelectedIndex == 1)
+                            int  type = DamageType.SelectedIndex ;
+                            if(type == 0)
                             {
                                 damageFee = OneItem.SmallDamageFee;
                                 DamagedGood damagedGood = new DamagedGood();
@@ -248,7 +249,7 @@ namespace Edir.forms
                                 _context.SaveChanges();
 
                             }
-                            else if(DamageType.SelectedIndex == 2)
+                            else if(type == 1)
                             {
                                 damageFee = OneItem.DamageFee;
                                 DamagedGood damagedGood = new DamagedGood();
@@ -260,17 +261,23 @@ namespace Edir.forms
                                 _context.SaveChanges();
 
                             }
-                            else if(DamageType.SelectedIndex == 3)
+                            else if(type == 2)
                             {
                                 DamagedGood damagedGood = new DamagedGood();
                                 damagedGood.ItemId = OneItem.Id;
                                 damagedGood.RepairType = "strong damage";
+                                OneItem.Quantity -= RequestedQuantity;
                                 damagedGood.Quantity = RequestedQuantity;
+                                damagedGood.IsRepaired = false;
                                 damagedGood.Description = Description.Text.ToString();
                                 _context.DamagedGoods.Add(damagedGood);
                                 _context.SaveChanges();
 
+                                _context.Entry(OneItem).State = System.Data.Entity.EntityState.Modified;
+                                _context.SaveChanges();
+
                             }
+                           
                             RentMoney += damageFee;
                         }
                        
@@ -362,6 +369,14 @@ namespace Edir.forms
                 rentals  = _context.Rentals.Where(r => r.RentedDate == ReDate && r.Returned == false).ToList();
                 RetQuantity.ItemsSource = rentals;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DamagedGood Selected = ((DamagedGood)damagedGrid.SelectedItem);
+            Selected.IsRepaired = true;
+            _context.Entry(Selected).State = System.Data.Entity.EntityState.Modified;
+            _context.SaveChanges();
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
