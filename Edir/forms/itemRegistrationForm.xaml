@@ -14,7 +14,7 @@
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             
         </Grid.RowDefinitions>
@@ -199,7 +199,7 @@
             </DataGrid>
         </StackPanel>
 
-        <Expander Grid.Row="2"
+        <Expander Grid.Row="2" VerticalAlignment="Stretch" Margin="0 10"
       HorizontalAlignment="Stretch"
       Header="Damaged goods">
             <ScrollViewer>

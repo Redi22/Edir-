@@ -42,6 +42,8 @@
                     <ComboBox FontSize="12"
   materialDesign:HintAssist.Hint="Member Id" Name="MemberId" ItemsSource="{Binding Id}" Loaded="MemberId_Loaded" DisplayMemberPath="Id" SelectedValuePath="Id"
   Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+                    <TextBox  FontSize="12" Name="amountPaid" Grid.Row="8" materialDesign:HintAssist.Hint="Amount" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
                     <Button Margin="30" Name="FullPay" Click="FullPay_Click"
     Style="{StaticResource MaterialDesignRaisedAccentButton}"
     Width="100"

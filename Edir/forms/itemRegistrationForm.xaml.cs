@@ -311,6 +311,8 @@ namespace Edir.forms
         {
             allitems = _context.Items.ToList();
             ItemGrid.ItemsSource = allitems;
+            damagedGrid.ItemsSource = _context.DamagedGoods.ToList();
+
         }
 
         private void Search_KeyUp(object sender, KeyEventArgs e)
@@ -374,15 +376,23 @@ namespace Edir.forms
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DamagedGood Selected = ((DamagedGood)damagedGrid.SelectedItem);
-            Selected.IsRepaired = true;
-            _context.Entry(Selected).State = System.Data.Entity.EntityState.Modified;
-            _context.SaveChanges();
+            if(Selected != null)
+            {
+                if (!Selected.IsRepaired)
+                {
+                    Selected.IsRepaired = true;
+                    Item replaced = _context.Items.FirstOrDefault(i => i.Id == Selected.ItemId);
+                    replaced.Quantity += Selected.Quantity;
+                    _context.Entry(replaced).State = System.Data.Entity.EntityState.Modified;
+                    _context.Entry(Selected).State = System.Data.Entity.EntityState.Modified;
+                    _context.SaveChanges();
+                }
+            }
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            var grid = sender as DataGrid;
-            grid.ItemsSource = _context.DamagedGoods.ToList();
+            damagedGrid.ItemsSource = _context.DamagedGoods.ToList();
         }
     }
 }

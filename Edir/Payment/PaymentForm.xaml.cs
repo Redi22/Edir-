@@ -111,9 +111,9 @@ namespace Edir.Payment
             Member mem = ((Member)MemberId.SelectedItem);
             if(mem != null)
             {
-                double amount = mem.Debit;
-                Edir.Capital += mem.Debit;
-                mem.Debit = 0;
+                double amount = Convert.ToInt64(amountPaid.Text);
+                Edir.Capital += amount;
+                mem.Debit -= amount;
                 _context.Entry(mem).State = System.Data.Entity.EntityState.Modified;
                 _context.SaveChanges();
                 Pay pay = new Pay();

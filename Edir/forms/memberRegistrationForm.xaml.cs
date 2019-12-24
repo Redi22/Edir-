@@ -458,28 +458,43 @@ namespace Edir.forms
 
             if(Fundamental.IsChecked.GetValueOrDefault() == true)
             {
-               //Member Descised = ((Member)MemGrid.SelectedItem);
-               // _context.Losses.Add(Loss);
-               // _context.Entry(Descised).State = System.Data.Entity.EntityState.Deleted;
-                
-               // foreach (var child in )
-               // {
-               //     _context.Childs.Attach(child);
-               //     _context.Entry(child).State = EntityState.Modified;
-               // }
-               // foreach (var child in Descised.Siblings)
-               // {
-               //     _context.Siblings.Attach(child);
-               //     _context.Entry(child).State = EntityState.Modified;
-               // }
-               // foreach (var child in Descised.SpouseSiblings)
-               // {
-               //     _context.SpouseSiblings.Attach(child);
-               //     _context.Entry(child).State = EntityState.Modified;
-               // }
-               // Spouse spo = _context.spouses.FirstOrDefault(s => s.ParentId == Descised.Id);
-               // _context.Entry(spo).State = EntityState.Modified;
-               // _context.SaveChanges();
+                Member Descised = ((Member)MemGrid.SelectedItem);
+                if(Descised != null)
+                {
+
+                    try
+                    {
+                        _context.Losses.Add(Loss);
+                        _context.Entry(Descised).State = System.Data.Entity.EntityState.Deleted;
+                        //Descised.Children = _context.Childs.Where(c => c.ParentId == Descised.Id).ToList();
+                        //Descised.Siblings = _context.Siblings.Where(c => c.ParentId == Descised.Id).ToList();
+                        //Descised.SpouseSiblings = _context.SpouseSiblings.Where(c => c.ParentId == Descised.Id).ToList();
+                        //foreach (var child in Descised.Children)
+                        //{
+                        //    _context.Entry(child).State = EntityState.Modified;
+
+                        //}
+                        //foreach (var child in Descised.Siblings)
+                        //{
+                        //    _context.Entry(child).State = EntityState.Modified;
+                        //}
+                        //foreach (var child in Descised.SpouseSiblings)
+                        //{
+                        //    _context.Entry(child).State = EntityState.Modified;
+                        //}
+                        //Spouse spo = _context.spouses.FirstOrDefault(s => s.ParentId == Descised.Id);
+                        //if(spo != null)
+                        //{
+                        //_context.Entry(spo).State = EntityState.Modified;
+                        //}
+                        _context.SaveChanges();
+                    } 
+                    catch (Exception msg)
+                    {
+                        Console.WriteLine(msg.Message);
+                        
+                    }
+                }
             }
             long Type = Convert.ToInt64(LossType.SelectedIndex);
             if (Type == 1)
@@ -530,6 +545,7 @@ namespace Edir.forms
                 Loss.Date = Convert.ToDateTime(DateOfDeath.Text);
                 _context.Losses.Add(Loss);
                 _context.Entry(Descised).State = System.Data.Entity.EntityState.Deleted;
+                _context.SaveChanges();
                 _context.Entry(Edir).State = System.Data.Entity.EntityState.Modified;
                 _context.SaveChanges();
 
